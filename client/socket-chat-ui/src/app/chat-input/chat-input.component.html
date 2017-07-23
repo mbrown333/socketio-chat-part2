@@ -1,0 +1,12 @@
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <div class="row" *ngIf="!user">
+      <input type="text" class="form-control" id="user" name="user"
+              placeholder="Enter Name" [(ngModel)]="userInput"  (keyup.enter)="enterChat()"/>
+    </div>
+    <div class="row" *ngIf="user">
+      <input type="text" class="form-control" id="chat" name="chat" placeholder="Enter Message"
+              [(ngModel)]="chatMessage" (keyup.enter)="sendMessage()" (keydown)="startTyping()" />
+    </div>
+  </div>
+</nav>
